@@ -4,6 +4,12 @@
 
 **Elite Google Dorks Search by Biscuit** is a collection of advanced Google search queries, known as dorks, designed to help you find hidden information and vulnerabilities on the web. This tool is perfect for cybersecurity professionals and enthusiasts looking to enhance their search capabilities.
 
+
+https://github.com/user-attachments/assets/d840de10-500d-4302-8e57-3f735d5f74d2
+
+
+
+
 ## Features
 
 - **Smart and Improved Dorks**: A refined selection of Google dorks for more effective searching.
