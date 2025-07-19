@@ -27,15 +27,20 @@ const typeWritting = () => {
     anchor.forEach((a, index) => {
         const originalHref = originalValues[index].href;
         const originalHoverText = originalValues[index].hoverText;
-        
-        // Replace all occurrences of "biscuit.com" with the new input value based on the original values
-        const myString = originalHref.replace(/biscuit\.com/g, value);
-        const myString1 = originalHoverText.replace(/biscuit\.com/g, value);
-        
+
+        // Replace biscuit.com and .biscuit. with input value
+        const myString = originalHref
+            .replace(/biscuit\.com/g, value)
+            .replace(/\.biscuit\./g, `.${value}.`);
+        const myString1 = originalHoverText
+            .replace(/biscuit\.com/g, value)
+            .replace(/\.biscuit\./g, `.${value}.`);
+
         a.setAttribute('href', myString);
         a.dataset.hoverText = myString1;
-        a.setAttribute('title', myString1); // Update the title attribute for hover text
+        a.setAttribute('title', myString1);
     });
 };
+
 
 input.addEventListener('input', typeWritting);
