@@ -97,45 +97,55 @@ nav ul li a {
 
 .hub {
     background-color: var(--dark);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem; /* 2xl rounded corners */
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .hub:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .hub h3 {
     color: var(--light);
-    font-size: 18px;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin: 0 0 12px 0;
+    margin: 0;
+    line-height: 1.5;
 }
 
 .hub p {
     color: var(--gray);
-    font-size: 14px;
-    margin: 0 0 20px 0;
+    font-size: 0.9375rem;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .hub button {
-    padding: 10px 20px;
+    padding: 0.75rem 1.5rem;
     background-color: var(--primary);
     border: none;
-    border-radius: 6px;
+    border-radius: 0.75rem;
     color: white;
     cursor: pointer;
     font-weight: 500;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
+    font-size: 0.9375rem;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-top: 0.5rem;
 }
 
 .hub button:hover {
     background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ------------------------------------------------------------------ */
@@ -202,13 +212,19 @@ p {
 /* Dropdown content styling */
 .hub .dropdown-content {
     display: none;
-    background-color: rgba(15, 23, 42, 0.9);
+    background-color: rgba(15, 23, 42, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    margin-top: 16px;
-    padding: 16px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Show dropdown content */
@@ -232,21 +248,22 @@ p {
 /* Dropdown link styling */
 .hub .dropdown-link {
     display: block;
-    padding: 12px 16px;
-    background-color: rgba(79, 70, 229, 0.1);
+    padding: 0.75rem 1rem;
+    background-color: rgba(79, 70, 229, 0.08);
     color: var(--light);
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 0.75rem;
     transition: all 0.2s ease;
-    font-size: 14px;
+    font-size: 0.9375rem;
     font-weight: 500;
-    margin: 8px 0;
-    border-left: 3px solid transparent;
+    margin: 0.5rem 0;
+    border-left: 2px solid transparent;
 }
 
 .hub .dropdown-link:hover {
-    background-color: rgba(79, 70, 229, 0.2);
-    border-left: 3px solid var(--primary);
+    background-color: rgba(79, 70, 229, 0.15);
+    border-left: 2px solid var(--primary);
+    transform: translateX(4px);
 }
 
 /* Hover effect for dropdown links */
@@ -376,6 +393,47 @@ p {
                     </ul>
                 </div>
             </div>
+
+            <div class="hub">
+                <h3>Find Subdomains From Dorking</h3>
+                <p>Unique dorks to find subdomains listed by crawler</p>
+                <button class="view-hub-button" onclick="toggleDropdown(this)">View Hub</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>
+                            <a href="https://www.google.com/search?q=site:*<*.biscuit.*" class="anchor dropdown-link" target="_blank" data-hover-text="site:*<*.biscuit.*">
+                                Dork: site:*<*.biscuit.*
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/search?q=site:*<-*.biscuit.*" class="anchor dropdown-link" target="_blank" data-hover-text="site:*<-*.biscuit.*">
+                                Dork: site:*<-*.biscuit.*
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/search?q=site:*>*.biscuit.*" class="anchor dropdown-link" target="_blank" data-hover-text="site:*>*.biscuit.*">
+                                Dork: site:*>*.biscuit.*
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/search?q=site:*->*.biscuit.*" class="anchor dropdown-link" target="_blank" data-hover-text="site:*->*.biscuit.*">
+                                Dork: site:*->*.biscuit.*
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/search?q=site:*<->*.biscuit.*" class="anchor dropdown-link" target="_blank" data-hover-text="site:*<->*.biscuit.*">
+                                Dork: site:*<->*.biscuit.*
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.google.com/search?q=site:*<*.biscuit.com intext:"login" | intitle:"login" | inurl:"login" | intext:"username" | intitle:"username" | inurl:"username" | intext:"password" | intitle:"password" | inurl:"password"' class="anchor dropdown-link" target="_blank" data-hover-text='site:*<*.biscuit.com with login keywords'>
+                                Dork: Subdomains + Login Keywords
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
 
             <div class="hub">
                 <h3>Pages Contain Login Panel</h3>
