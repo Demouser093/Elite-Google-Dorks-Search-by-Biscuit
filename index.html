@@ -448,6 +448,54 @@ p {
             </div>
 
             <div class="hub">
+                <h3>GitHub Regex Dorks</h3>
+                <p>Dorks for extracting sensitive information from GitHub code search</p>
+                <button class="view-hub-button" onclick="toggleDropdown(this)">View Hub</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <h3>Biscuit.com Sensitive Info</h3>
+                        <li>
+                            <a href="https://github.com/search?q=%2F%5BA-Za-z0%E2%80%939-_%5D%2B%5C.biscuit%5C.com%5C%2F%2B%2F+AND+%28apikey+OR+api_key+OR+secret+OR+password+OR+credentials+OR+token+OR+bearer+OR+authorization+OR+client_secret+OR+client_id+OR+access_token+OR+private_key+OR+ssh-rsa+OR+ssh-dss+OR+-----BEGIN+OR+-----END+OR+.env+OR+config+OR+aws_access_key_id+OR+aws_secret_access_key+OR+db_password+OR+ftp_password+OR+smtp_password+OR+auth_token+OR+bearer_token+OR+oauth_token+OR+jwt+OR+session_token+OR+s3.amazonaws.com+OR+s3%3A%2F%2F+OR+.s3.amazonaws.com+OR+s3-external-+OR+s3.dualstack.+OR+s3-website-+OR+s3.ap+OR+s3.us+OR+s3.eu+OR+s3.ca+OR+s3.sa%29&type=code" 
+                            class="anchor dropdown-link" target="_blank" 
+                            data-hover-text="/[A-Za-z0–9-_]+\.biscuit\.com\/+/ AND (apikey OR api_key OR secret ...)">
+                            Biscuit.com API Keys, Tokens, Secrets
+                            </a>
+                        </li>
+
+                        <h3>First-Level Domain</h3>
+                        <li>
+                            <a href="https://github.com/search?q=%2F%5BA-Za-z0%E2%80%939-_%5D%2B%5C.biscuit%5C.com%5C%2F%2B%2F&type=code" 
+                            class="anchor dropdown-link" target="_blank" 
+                            data-hover-text="/[A-Za-z0–9-_]+\.biscuit\.com\/+/">
+                            First-Level Domains
+                            </a>
+                        </li>
+
+                        <h3>Second-Level Domain</h3>
+                        <li>
+                            <a href="https://github.com/search?q=%2F%5BA-Za-z0-9-_%5D%2B%5C.%5BA-Za-z0-9-_%5D%2B%5C.biscuit%5C.com%5C%2F%2F&type=code" 
+                            class="anchor dropdown-link" target="_blank" 
+                            data-hover-text="/[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.biscuit\.com\//">
+                            Second-Level Domains
+                            </a>
+                        </li>
+
+                        <h3>Third-Level Domain</h3>
+                        <li>
+                            <a href="https://github.com/search?q=%2F%5BA-Za-z0-9-_%5D%2B%5C.%5BA-Za-z0-9-_%5D%2B%5C.%5BA-Za-z0-9-_%5D%2B%5C.biscuit%5C.com%5C%2F%2F&type=code" 
+                            class="anchor dropdown-link" target="_blank" 
+                            data-hover-text="/[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.biscuit\.com\//">
+                            Third-Level Domains
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        
+
+
+            <div class="hub">
                 <h3>File Contains Juicy Information</h3>
                 <p>Dorks Containing Keywords That Leads To File Containing Juicy Information</p>
                 <button class="view-hub-button" onclick="toggleDropdown(this)">View Hub</button>
