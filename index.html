@@ -9,6 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <style>
+
+/* Scrollable dropdown content */
+.hub .dropdown-content {
+    max-height: 300px;          /* Limit dropdown height */
+    overflow-y: auto;           /* Enable vertical scroll */
+    scrollbar-width: thin;      /* Firefox scrollbar size */
+    scrollbar-color: var(--primary) transparent; /* Firefox scrollbar color */
+}
+
+/* Scrollbar styling - Chrome, Edge, Safari */
+.hub .dropdown-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.hub .dropdown-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hub .dropdown-content::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 4px;
+}
+
+
 :root {
     --primary: #4f46e5;
     --primary-hover: #4338ca;
